@@ -1,0 +1,25 @@
+.articles {
+    border-style: solid;
+    border-color: blue;
+    border-radius: 10px;
+    list-style-type: none;
+    margin-right: 30px; 
+    margin-left: -10px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    display: flex;
+}
+
+img {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+}
+
+.li {
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+}

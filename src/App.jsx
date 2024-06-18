@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ArticlesList from './components/ArticlesList'
+import Header from './components/Header'
+import '.css/App.css'
 
-function App() {
-  
+function App() {  
   return (
-    <div>
-      <Header />
-      <Route />
-      
-    </div>
+    <html className='main'>
+        <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>A Demo Font Family Page</title>
+          <link href="styles.css" rel="stylesheet" />
+        </head>
+      <Header/>
+      <ArticlesList/>
+    </html>
   )
 }
 

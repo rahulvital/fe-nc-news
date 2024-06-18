@@ -1,0 +1,7 @@
+.navbar {
+    background-color: hsl(300, 26%, 66%);
+    border: solid;
+    border-color: hsl(300, 50%, 50%);;
+    border-radius: 10px;
+    margin: 10px;
+}
