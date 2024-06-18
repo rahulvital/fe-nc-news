@@ -1,0 +1,32 @@
+.articles-list {
+    background-color: lightgreen;
+    border-color: green;
+    border-style: solid;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.title {
+    display: inline-block;
+    text-align: center;
+}
+
+#loading {
+    background: url('/src/assets/spinner.gif') no-repeat center center;
+    background-size: contain;
+    background-color: #fef9f4;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width:100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+li {
+    background-color: lightblue;
+    text-align: center;
+}
+
+.ul {
+    text-align: center;
+}
