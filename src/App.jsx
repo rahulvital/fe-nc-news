@@ -1,19 +1,21 @@
+import { Routes, Route, useLocation } from 'react-router-dom';
 import ArticlesList from './components/ArticlesList'
 import Header from './components/Header'
 import '.css/App.css'
+import Home from './components/Home';
+import ArticleById from './components/ArticlesById';
 
-function App() {  
+function App() {
+  const location = useLocation()  
   return (
-    <html className='main'>
-        <head>
-          <meta charset="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>A Demo Font Family Page</title>
-          <link href="styles.css" rel="stylesheet" />
-        </head>
+    <div className='App'>
       <Header/>
-      <ArticlesList/>
-    </html>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/articles/:article_id" element={<ArticleById />}/>
+      </Routes>
+      {location.pathname === '/' && <ArticlesList/>}
+    </div>
   )
 }
 
