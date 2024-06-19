@@ -1,25 +1,41 @@
 .articles {
-    border-style: solid;
-    border-color: blue;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 1px solid purple;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     list-style-type: none;
-    margin-right: 30px; 
-    margin-left: -10px;
-    margin-top: 10px;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    padding: 10px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #8900c0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7a00b3;
 }
 
 img {
     width: 90px;
     height: 90px;
-    padding: 10px;
+    border-radius: 5px;
 }
 
 .li {
     text-align: center;
     vertical-align: middle;
     display: flex;
+    align-items: center;
 }

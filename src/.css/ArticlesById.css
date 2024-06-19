@@ -1,0 +1,44 @@
+.individual-article {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #9a01e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8000b3;
+}
+
+.article-section {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.article-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.article-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto 10px;
+}

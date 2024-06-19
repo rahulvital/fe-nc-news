@@ -1,13 +1,16 @@
 .articles-list {
-    background-color: lightgreen;
-    border-color: green;
-    border-style: solid;
+    background-color: rgb(220, 189, 220);
+    border: 2px solid purple;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+}
+
+h2 {
+    padding-top: 20px;
 }
 
 .title {
-    display: inline-block;
     text-align: center;
 }
 
@@ -15,18 +18,34 @@
     background: url('/src/assets/spinner.gif') no-repeat center center;
     background-size: contain;
     background-color: #fef9f4;
-    top: 0;
-    left: 0;
     height: 100px;
-    width:100%;
+    width: 100%;
     font-family: 'Courier New', Courier, monospace;
 }
 
+button {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #bf00ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8300b3;
+}
+
 li {
-    background-color: lightblue;
+    background-color: plum;
     text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
 }
 
 .ul {
-    text-align: center;
+    padding: 0;
 }
