@@ -11,3 +11,8 @@ export const getArticlesById = async (article_id) => {
     const articleById = await axios.get(`${API_URL}/articles/${article_id}`);
     return articleById
 }
+
+export const getCommentsByArticle = async (article_id) => {
+  const CommentsByArticle = await axios.get(`${API_URL}/articles/${article_id}/comments`)
+  return CommentsByArticle
+}

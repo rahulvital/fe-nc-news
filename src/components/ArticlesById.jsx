@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { getArticlesById } from "../utils/api";
 import '../.css/ArticlesById.css'
+import CommentsList from "./CommentsList"
 
 const ArticleById = () => {
     const { article_id } = useParams()
@@ -36,6 +37,7 @@ const ArticleById = () => {
             <p>{article.author}</p>
             <label>Votes:</label>
             <p>{article.votes}</p>
+            <CommentsList article_id={article_id}/>
         </div>)}
     </div>)
 }

@@ -1,0 +1,23 @@
+.comment {
+    list-style-type: none;
+    background-color: rgb(220, 189, 220);
+    border: 2px solid purple;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+}
+
+button {
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #8300b3;
+}
