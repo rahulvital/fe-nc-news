@@ -6,13 +6,11 @@ import { getArticles } from '../utils/api'
 const ArticlesList = () => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const [filter, setFilter] = useState(undefined)
     
     useEffect(() => {
         setIsLoading(true)
         getArticles()
         .then((articlesResponse) => {
-           
             setArticles(articlesResponse.articles)
             setIsLoading(false)
         })
@@ -33,7 +31,7 @@ const ArticlesList = () => {
         <ul className='ul'>
             {articles.map((article) => {
                 if (article.article_id) {
-                    return (<Articles key={article.article_id} article={article} setFilter={setFilter}/>)}})   
+                    return (<Articles key={article.article_id} article={article}/>)}})   
             }
         </ul>
     </div>
