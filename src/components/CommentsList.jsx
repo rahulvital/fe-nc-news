@@ -11,7 +11,6 @@ const CommentsList = ({ article_id }) => {
         setIsLoading(true)
         getCommentsByArticle(article_id)
         .then((commentsResponse) => {
-            console.log(commentsResponse.data.comments)
             setComments(commentsResponse.data.comments)
             setIsLoading(false)
         })
@@ -28,10 +27,9 @@ const CommentsList = ({ article_id }) => {
         <div className="comments-list">
             <div className='title'>
                 <h2>Comments:</h2>
-                <input placeholder='Add comment here...'></input>
+                <input id='add-comment-placeholder' placeholder='Add comment here...'></input>
                 <ul>
                     {comments.map((comment) => {
-                        console.log(comment)
                         return (
                         <li key={comment.comment_id} className='comment'>
                             <Comments comment={comment} />
