@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import {getCommentsByArticle} from '../utils/api'
 import '../.css/CommentsList.css'
 import Comments from './Comments'
+import CommentsAdder from './CommentsAdder'
 
 import DeleteButton from './DeleteButton'
 import CommentAdder from './CommentAdder'
@@ -9,9 +10,9 @@ import CommentAdder from './CommentAdder'
 const CommentsList = ({ article_id }) => {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+
     const [isDeleted, setIsDeleted] =useState(false)
     const [isDeletedId, setIsDeletedId] = useState(0)
-
 
     useEffect(() => {
         setIsLoading(true)
@@ -33,7 +34,9 @@ const CommentsList = ({ article_id }) => {
     return (
         <div className="comments-list">
             <div className='title'>
+
                 <CommentAdder article_id={article_id} setComments={setComments} comments={comments}/>
+
                 <ul>
                     {comments.map((comment) => {
                         return (
