@@ -13,11 +13,17 @@ export const getArticlesById = async (article_id) => {
 }
 
 export const getCommentsByArticle = async (article_id) => {
-  const CommentsByArticle = await axios.get(`${API_URL}/articles/${article_id}/comments`)
-  return CommentsByArticle
+  const commentsByArticle = await axios.get(`${API_URL}/articles/${article_id}/comments`)
+  return commentsByArticle
 }
 
 export const patchUpVote = async (article_id, {inc_votes}) => {
   const upVote = await axios.patch(`${API_URL}/articles/${article_id}`, {inc_votes})
   return upVote
+}
+
+export const postNewComment = async (article_id, { body }) => {
+  const username = "grumpy19"
+  const addComment = await axios.post(`${API_URL}/articles/${article_id}/comments`, {username: username, body: body})
+  return addComment
 }

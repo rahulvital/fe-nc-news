@@ -5,3 +5,7 @@
     padding: 10px;
     box-sizing: border-box;
 }
+
+h1 {
+    font-size: larger;
+}

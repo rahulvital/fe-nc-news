@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import {getCommentsByArticle} from '../utils/api'
 import '../.css/CommentsList.css'
 import Comments from './Comments'
+import CommentsAdder from './CommentsAdder'
 
 const CommentsList = ({ article_id }) => {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    
+
     useEffect(() => {
         setIsLoading(true)
         getCommentsByArticle(article_id)
@@ -26,8 +27,7 @@ const CommentsList = ({ article_id }) => {
     return (
         <div className="comments-list">
             <div className='title'>
-                <h2>Comments:</h2>
-                <input id='add-comment-placeholder' placeholder='Add comment here...'></input>
+                <CommentsAdder article_id={article_id} setComments={setComments} comments={comments}/>
                 <ul>
                     {comments.map((comment) => {
                         return (
