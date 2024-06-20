@@ -1,0 +1,9 @@
+.vote-clicked {
+    background-color: #8300b3;
+    src: local("../assets/arrow-up");
+    border: solid #1a0023;
+}
+
+.vote-unclicked {
+    background-color: #bf00ff;
+}
