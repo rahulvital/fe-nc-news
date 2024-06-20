@@ -4,18 +4,25 @@ import '../.css/CommentsList.css'
 import Comments from './Comments'
 import CommentsAdder from './CommentsAdder'
 
+import DeleteButton from './DeleteButton'
+import CommentAdder from './CommentAdder'
+
 const CommentsList = ({ article_id }) => {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
+    const [isDeleted, setIsDeleted] =useState(false)
+    const [isDeletedId, setIsDeletedId] = useState(0)
+
     useEffect(() => {
         setIsLoading(true)
+        setIsDeleted(false)
         getCommentsByArticle(article_id)
         .then((commentsResponse) => {
             setComments(commentsResponse.data.comments)
             setIsLoading(false)
         })
-    }, [])
+    }, [article_id])
 
     if (isLoading){
         return (
@@ -27,19 +34,20 @@ const CommentsList = ({ article_id }) => {
     return (
         <div className="comments-list">
             <div className='title'>
-                <CommentsAdder article_id={article_id} setComments={setComments} comments={comments}/>
+
+                <CommentAdder article_id={article_id} setComments={setComments} comments={comments}/>
+
                 <ul>
                     {comments.map((comment) => {
                         return (
                         <li key={comment.comment_id} className='comment'>
-                            <Comments comment={comment} />
+                            <Comments comment={comment} isDeleted={isDeleted} isDeletedId={isDeletedId}/>
+                            <DeleteButton setIsDeleted={setIsDeleted} comment_id={comment.comment_id} comments={comments}
+                                setComments={setComments} setIsDeletedId={setIsDeletedId} />
                         </li>)
                     })}
                 </ul>
             </div>
-            <ul className='ul'>
-                
-            </ul>
         </div>
         )
 }
