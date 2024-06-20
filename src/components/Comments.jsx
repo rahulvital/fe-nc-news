@@ -1,11 +1,20 @@
 import '../.css/Comments.css'
 
-const Comments = ({comment}) => {
+const Comments = ({comment, isDeleted, isDeletedId}) => {
     
     const handleUpVote = (event) => {
         event.preventDefault()
         console.log("upvote")
     }
+
+    console.log(isDeletedId)
+
+    if (isDeleted && isDeletedId === comment.comment_id) {
+        console.log(isDeleted)
+        return (<div>
+                 <p>Comment Deleted!</p>
+                </div>)
+    } 
 
     return (
     <div>
