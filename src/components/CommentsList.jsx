@@ -39,7 +39,7 @@ const CommentsList = ({ article_id }) => {
                         <li key={comment.comment_id} className='comment'>
                             <Comments comment={comment} isDeleted={isDeleted} isDeletedId={isDeletedId}/>
                             <DeleteButton setIsDeleted={setIsDeleted} comment_id={comment.comment_id} comments={comments}
-                                setComments={setComments} setIsDeletedId={setIsDeletedId} />
+                                setComments={setComments} setIsDeletedId={setIsDeletedId} author={comment.author} />
                         </li>)
                     })}
                 </ul>

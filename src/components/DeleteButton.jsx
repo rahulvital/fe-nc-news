@@ -1,9 +1,10 @@
 import { deleteComment } from "../utils/api"
 
-const DeleteButton = ({comment_id, setComments, comments, setIsDeleted, setIsDeletedId}) => {
-    
+const DeleteButton = ({comment_id, setComments, comments, setIsDeleted, setIsDeletedId, author}) => {
+    const user = "grumpy19"
     const handleDelete = (event) => {
         event.preventDefault()
+        
         const remainingComments = comments.filter(comment => comment.comment_id !== comment_id)
         setComments(remainingComments)
         setIsDeleted(true)
@@ -14,7 +15,12 @@ const DeleteButton = ({comment_id, setComments, comments, setIsDeleted, setIsDel
             setIsDeleted(false)
             setIsDeletedId(0)
        })
-   }
+       .catch((err) => console.log(err))
+    }
+    if (author !== user) {
+        return null
+    }
+
 
     return (
         <button
