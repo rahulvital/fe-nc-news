@@ -13,7 +13,7 @@ const VoteButton = ({article, setArticle}) => {
             setArticle(updatedArticle)
             patchUpVote(article.article_id, {inc_votes: 1})
             .then((response) => {
-                console.log(response.data.article, "upvote")
+                
             })
             .catch((err) => console.log(err))
         } else {
