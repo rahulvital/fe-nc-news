@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
 import {getCommentsByArticle} from '../utils/api'
-import '../.css/CommentsList.css'
+import '../css/CommentsList.css'
 import Comments from './Comments'
-import CommentsAdder from './CommentsAdder'
-
 import DeleteButton from './DeleteButton'
 import CommentAdder from './CommentAdder'
 
@@ -34,9 +32,7 @@ const CommentsList = ({ article_id }) => {
     return (
         <div className="comments-list">
             <div className='title'>
-
                 <CommentAdder article_id={article_id} setComments={setComments} comments={comments}/>
-
                 <ul>
                     {comments.map((comment) => {
                         return (

@@ -33,3 +33,13 @@ export const deleteComment = async ({comment_id}) => {
   const CommentsByArticle = await axios.delete(`${API_URL}/comments/${comment_id}`)
   return CommentsByArticle
 }
+
+export const getTopics = async () => {
+  const topics = await axios.get(`${API_URL}/topics`)
+  return topics
+}
+
+export const getArticlesByTopic = async (topic) => {
+  const articleById = await axios.get(`${API_URL}/articles`);
+  return articleById
+}

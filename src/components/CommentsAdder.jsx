@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import '../.css/CommentsAdder.css'
+import '../css/CommentsAdder.css'
 import { postNewComment } from '../utils/api'
 
 
@@ -25,7 +25,12 @@ const CommentsAdder = ({article_id, setComments, comments}) => {
 
     }
 
-    if (isLoading) (<div>Loading</div>)
+    if (isLoading){
+        return (
+        <section>
+            <div id='loading'></div>
+        </section>)
+    }
 
     return (
     <div className='comment-box'>

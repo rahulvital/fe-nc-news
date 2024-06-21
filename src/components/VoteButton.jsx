@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { patchUpVote } from "../utils/api"
-import '../.css/VoteButton.css'
+import '../css/VoteButton.css'
 
 const VoteButton = ({article, setArticle}) => {
     const [voteClicked, setVoteClicked] = useState(true)
@@ -21,7 +21,7 @@ const VoteButton = ({article, setArticle}) => {
             setArticle(updatedArticle)
             patchUpVote(article.article_id, {inc_votes: -1})
             .then((response) => {
-                console.log(response.data.article, "downvote")
+                
             })
             .catch((err) => console.log(err))
         }
