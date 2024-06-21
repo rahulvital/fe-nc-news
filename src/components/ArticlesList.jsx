@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import '../.css/ArticlesList.css'
+import '../css/ArticlesList.css'
 import Articles from './Articles'
 import { getArticles } from '../utils/api'
 

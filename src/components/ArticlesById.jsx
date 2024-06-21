@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { getArticlesById } from "../utils/api";
-import '../.css/ArticlesById.css'
+import '../css/ArticlesById.css'
 import CommentsList from "./CommentsList"
 import VoteButton from "./VoteButton";
 
@@ -21,7 +21,10 @@ const ArticleById = () => {
     }, [article_id])
 
     if (isLoading){
-        return <div>Loading...</div>
+        return (
+        <section>
+            <div id='loading'></div>
+        </section>)
     }
 
     return (

@@ -1,4 +1,4 @@
-import '../.css/Articles.css'
+import '../css/Articles.css'
 import { useNavigate } from 'react-router-dom';
 
 const Articles = ({article}) => {

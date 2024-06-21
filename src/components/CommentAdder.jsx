@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { postNewComment } from "../utils/api"
-import '../.css/CommentAdder.css'
+import '../css/CommentAdder.css'
 
 const CommentAdder = ({article_id, setComments, comments}) => {
 
@@ -11,14 +11,11 @@ const CommentAdder = ({article_id, setComments, comments}) => {
         event.preventDefault()
         if (newComment.length>0){
             setValidation(true)
-            console.log(newComment, "<<<<<input")
-            console.log(comments)
 
             const commentToAdd = { body: newComment, author: "grumpy19", votes: 0, comment_id: Date.now() }
             setComments([commentToAdd, ...comments])
             postNewComment(article_id, {body: newComment})
             .then((response) => {
-                // console.log(response.data)
                 setNewComment("")
             })
         } else {
