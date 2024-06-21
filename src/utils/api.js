@@ -2,13 +2,24 @@ import axios from 'axios';
 
 const API_URL = 'https://rahul-vital-be-nc-news.onrender.com/api';
 
+const handleError = (err) => {
+  if(err.response){
+    console.error(`Error ${err.response.status} - ${err.response.data.msg}`)
+    return {status: err.response.status, msg: err.response.data.msg}
+  } else {
+    console.error(`Error: ${err.message}`);
+    return { status: 500, msg: err.message };
+  }
+}
+
+
 export const getArticles = async (sort_by = "created_at", order = "desc") => {
   try {
     const response = await axios.get(`${API_URL}/articles`, {params: { sort_by, order }});
     return response.data;
   }
   catch (err) {
-    console.log("getArticles error", err)
+    return handleError(err)
   }
 };
 
@@ -18,7 +29,7 @@ export const getArticlesById = async (article_id) => {
       return articleById
     }
     catch (err) {
-      console.log("getArticlesById", err)
+      return handleError(err)
     }
 }
 
@@ -28,7 +39,7 @@ export const getCommentsByArticle = async (article_id) => {
     return commentsByArticle
   }
   catch (err) {
-    console.log("getCommentsByArticle", err)
+    return handleError(err)
   }
 }
 
@@ -38,7 +49,7 @@ export const patchUpVote = async (article_id, {inc_votes}) => {
     return upVote
   }
   catch (err) {
-    console.log("patchUpVote", err)
+    return handleError(err)
   }
 }
 
@@ -49,7 +60,7 @@ export const postNewComment = async (article_id, { body }) => {
     return addComment
   }
   catch (err) {
-    console.log("postNewComment", err)
+    return handleError(err)
   }
 }
 
@@ -59,7 +70,7 @@ export const deleteComment = async ({comment_id}) => {
     return CommentsByArticle
   }
   catch (err) {
-    console.log("deleteComment", err)
+    return handleError(err)
   }
 }
 
@@ -70,7 +81,7 @@ export const getTopics = async () => {
 
   }
   catch (err) {
-    console.log("getTopics", err)
+    return handleError(err)
   }
 }
 
@@ -81,6 +92,6 @@ export const getArticlesByTopic = async () => {
 
   }
   catch (err) {
-    console.log("getArticlesByTopic", err)
+    return handleError(err)
   }
 }

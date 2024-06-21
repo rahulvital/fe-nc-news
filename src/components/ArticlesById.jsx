@@ -4,18 +4,24 @@ import { getArticlesById } from "../utils/api";
 import '../css/ArticlesById.css'
 import CommentsList from "./CommentsList"
 import VoteButton from "./VoteButton";
+import Error from "./Error";
 
 const ArticleById = () => {
     const { article_id } = useParams()
     const navigate = useNavigate()
     const [article, setArticle] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState(null)
     
     useEffect(( )=> {
         setIsLoading(true)
         getArticlesById(article_id)
         .then((articleIdResponse) => {
-            setArticle(articleIdResponse.data.article)
+            if(articleIdResponse.status && articleIdResponse.msg){
+                setError(articleIdResponse)
+            } else {
+                setArticle(articleIdResponse.data.article)
+            }
             setIsLoading(false)
         })
     }, [article_id])
@@ -23,9 +29,14 @@ const ArticleById = () => {
     if (isLoading){
         return (
         <section>
-            <div id='loading'></div>
+            <img src="../assets/spinner.gif" id='loading'></img>
         </section>)
     }
+
+    if (error) {
+        return <Error error={error}/>
+    } 
+        
 
     return (
     <div className="individual-article">
